@@ -7,10 +7,9 @@ Themis
 
 ## Download training data:
 
-1) [Nazario Phishing - MBox Format](https://monkey.org/~jose/phishing/phishing3.mbox)
-2) [IWSPA 2018 Phishning & Benign - TXT Format](https://github.com/BarathiGanesh-HB/IWSPA-AP/blob/master/data/Dataset_Full_Header_Training.zip)
+1) [IWSPA 2018 Phishing & Legit - TXT Format](https://github.com/BarathiGanesh-HB/IWSPA-AP/blob/master/data/Dataset_Full_Header_Training.zip)
 
-## Convert IWSPA TXT Format to JSON
+## Convert IWSPA TXT to JSON
 
 1) Unzip IWSPA zip archive
 2) Edit `data/iwspa-to-json.py` and modify `INPUT_DIRECTORY` variable to point to unzipped legit training folder.
@@ -35,3 +34,9 @@ Themis
   - `predict_classes(model, test_df, tokenizers)`: Run model on test data frame.
   - `predict_classes(model, validation_df, tokenizers)`: Run model on validation data frame.
   - `prediction_metrics(y_test, y_hat_test)`: Print confusion matrix
+  
+ # Steps to visualize data
+ 
+ ## Download data
+ 
+ 1) [Nazario Phishing - MBox Format](https://monkey.org/~jose/phishing/phishing3.mbox)

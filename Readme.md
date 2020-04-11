@@ -1,5 +1,3 @@
-Themis
-
 # Steps to reproduce Themis model
 
 ## Original Paper
@@ -35,24 +33,40 @@ Themis
   - `predict_classes(model, validation_df, tokenizers)`: Run model on validation data frame.
   - `prediction_metrics(y_test, y_hat_test)`: Print confusion matrix
   
- # Steps to visualize data
+# Steps to visualize data
  
- ## Download data
+## Download additional data
  
  1) [Nazario Phishing - MBox Format](https://monkey.org/~jose/phishing/phishing3.mbox)
  
- ## Convert MBOX to TXT
+## Convert IWSPA TXT files to a signle consolidated TXT
+ 1) Edit `data/iwspa-body-to-txt.py` and modify the `iwspa_dir` variable in the `run` function to point to the folder containing the IWSPA legitimate TXT emails.
+ 2) Modify the `output_dir` and `legit_body_file` variables in the `process_directory` function to the point where the IWSPA legitimate TXT files will be outputted as a single TXT file.
+ 
+## Convert MBOX to TXT
  
  1) Edit `data/mbox-to-txt.py` and modify the first argument to `processFile` to point to the path to the Nazario MBOX file.
  2) Modify the `processed_dir` variable to the path where the pre-processed TXT file will be stored.
  3) Modify the `phish_body_file` variable to the name of the pre-processed TXT file.
  
- ## Pre-process TXT (Phase 1)
+## Pre-process Nazario TXT (Phase 1)
  
  1) Edit `data/nazario-interim-preprocessor.py` and modify `processed_dir` and `phish_body_file` variables in the `run` function to point to the folder containing the INPUT Nazario TXT file.
  2) Modify `processed_dir` and `phish_body_file` variables in the `process_lines` function to point to the path where the pre-processed TXT file will be saved.
  
- ## Pre-process TXT - Deduplication (Phase 2)
+## Pre-process Nazario TXT - Deduplication (Phase 2)
  
   1) Edit `data/deduplicate-data.py` and modify `processed_dir` and `phish_body_file` variables in the `run` function to point to the folder containing the INPUT Nazario TXT file from the previous phase.
  2) Modify `processed_dir` and `phish_body_file` variables in the `process_lines` function to point to the path where the pre-processed TXT file will be saved.
+ 
+## Run Analysis
+ 
+### Number of words/characters
+ 1) Edit `visualization/length-study.py` and and modify `processed_dir` and `phish_body_file` variables in the `run` function to point to the folder containing the INPUT Nazario TXT file from the previous phase.
+ 2) Modify the variable `legit_body_file` in the `run` function to the point to the file containing the IWSPA txt file.
+ 3) Run `visualization/length-study.py`.
+ 
+### Top 50 words
+ 1) Edit `visualization/top-words.py` and and modify `processed_dir` and `phish_body_file` variables in the `run` function to point to the folder containing the INPUT Nazario TXT file from the previous phase.
+ 2) Modify the variable `legit_body_file` in the `run` function to the point to the file containing the IWSPA txt file.
+ 3) Run `visualization/top-words.py`.

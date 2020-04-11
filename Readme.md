@@ -41,8 +41,18 @@ Themis
  
  1) [Nazario Phishing - MBox Format](https://monkey.org/~jose/phishing/phishing3.mbox)
  
- ## Pre-process data
+ ## Convert MBOX to TXT
  
- 1) Edit `mbox-to-txt.py` and modify the first argument to `processFile` to point to the path to the Nazario MBOX file.
+ 1) Edit `data/mbox-to-txt.py` and modify the first argument to `processFile` to point to the path to the Nazario MBOX file.
  2) Modify the `processed_dir` variable to the path where the pre-processed TXT file will be stored.
  3) Modify the `phish_body_file` variable to the name of the pre-processed TXT file.
+ 
+ ## Pre-process TXT (Phase 1)
+ 
+ 1) Edit `data/nazario-interim-preprocessor.py` and modify `processed_dir` and `phish_body_file` variables in the `run` function to point to the folder containing the INPUT Nazario TXT file.
+ 2) Modify `processed_dir` and `phish_body_file` variables in the `process_lines` function to point to the path where the pre-processed TXT file will be saved.
+ 
+ ## Pre-process TXT - Deduplication (Phase 2)
+ 
+  1) Edit `data/deduplicate-data.py` and modify `processed_dir` and `phish_body_file` variables in the `run` function to point to the folder containing the INPUT Nazario TXT file from the previous phase.
+ 2) Modify `processed_dir` and `phish_body_file` variables in the `process_lines` function to point to the path where the pre-processed TXT file will be saved.

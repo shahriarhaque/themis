@@ -40,3 +40,9 @@ Themis
  ## Download data
  
  1) [Nazario Phishing - MBox Format](https://monkey.org/~jose/phishing/phishing3.mbox)
+ 
+ ## Pre-process data
+ 
+ 1) Edit `mbox-to-txt.py` and modify the first argument to `processFile` to point to the path to the Nazario MBOX file.
+ 2) Modify the `processed_dir` variable to the path where the pre-processed TXT file will be stored.
+ 3) Modify the `phish_body_file` variable to the name of the pre-processed TXT file.

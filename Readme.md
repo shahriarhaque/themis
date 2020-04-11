@@ -38,11 +38,7 @@
 ## Download additional data
  
  1) [Nazario Phishing - MBox Format](https://monkey.org/~jose/phishing/phishing3.mbox)
- 
-## Convert IWSPA TXT files to a single consolidated TXT
- 1) Edit `data/iwspa-body-to-txt.py` and modify the `iwspa_dir` variable in the `run` function to point to the folder containing the IWSPA legitimate TXT emails.
- 2) Modify the `output_dir` and `legit_body_file` variables in the `process_directory` function to the point where the IWSPA legitimate TXT files will be outputted as a single TXT file.
- 
+  
 ## Convert MBOX to TXT
  
  1) Edit `data/mbox-to-txt.py` and modify the first argument to `processFile` to point to the path to the Nazario MBOX file.
@@ -58,6 +54,10 @@
  
   1) Edit `data/deduplicate-data.py` and modify `processed_dir` and `phish_body_file` variables in the `run` function to point to the folder containing the INPUT Nazario TXT file from the previous phase.
  2) Modify `processed_dir` and `phish_body_file` variables in the `process_lines` function to point to the path where the pre-processed TXT file will be saved.
+ 
+## Convert IWSPA TXT files to a single consolidated TXT (Optional)
+ 1) Edit `data/iwspa-body-to-txt.py` and modify the `iwspa_dir` variable in the `run` function to point to the folder containing the IWSPA legitimate TXT emails.
+ 2) Modify the `output_dir` and `legit_body_file` variables in the `process_directory` function to the point where the IWSPA legitimate TXT files will be outputted as a single TXT file. 
  
 ## Run Analysis
  

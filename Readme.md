@@ -39,7 +39,7 @@
  
  1) [Nazario Phishing - MBox Format](https://monkey.org/~jose/phishing/phishing3.mbox)
  
-## Convert IWSPA TXT files to a signle consolidated TXT
+## Convert IWSPA TXT files to a single consolidated TXT
  1) Edit `data/iwspa-body-to-txt.py` and modify the `iwspa_dir` variable in the `run` function to point to the folder containing the IWSPA legitimate TXT emails.
  2) Modify the `output_dir` and `legit_body_file` variables in the `process_directory` function to the point where the IWSPA legitimate TXT files will be outputted as a single TXT file.
  
